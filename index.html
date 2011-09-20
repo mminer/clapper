@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="author" content="Matthew Miner (matthew@matthewminer.com)" />
+	<meta name="description" content="Slate board for filmmakers." />
+	<meta name="keywords" content="slate, clapperboard, clapboard, clapper, sticks, marker, film, filmmaking, video, clapsticks" />
+	<meta name="viewport" content="width=1024,height=748,user-scalable=no" />
+	<title>Tail Slate</title>
+	<link rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body>
+
+	<h1>Tail Slate</h1>
+
+	<div id="sticks">
+		<canvas width="1024" height="80"></canvas>
+		<audio src="/audio/clap.mp3" preload="auto"></audio>
+	</div>
+
+	<div id="slate">
+		<div class="production">
+			<h2>Production</h2>
+			<p contenteditable="true"></p>
+		</div>
+
+		<div class="date">
+			<h2>Date</h2>
+			<p></p>
+		</div>
+
+		<hr />
+
+		<div class="roll">
+			<h2>Roll</h2>
+			<p contenteditable="true"></p>
+		</div>
+
+		<div class="scene">
+			<h2>Scene</h2>
+			<p contenteditable="true"></p>
+		</div>
+
+		<div class="take">
+			<h2>Take</h2>
+			<p></p>
+
+			<div class="controls">
+				<button type="button" class="increment">+</button>
+				<button type="button" class="decrement">-</button>
+				<button type="button" class="reset">Reset</button>
+			</div>
+		</div>
+
+		<hr />
+
+		<div class="director">
+			<h2>Director</h2>
+			<p contenteditable="true"></p>
+		</div>
+
+		<div class="camera">
+			<h2>Camera</h2>
+			<p contenteditable="true"></p>
+		</div>
+
+		<hr />
+	</div>
+
+	<div id="toolbar">
+		<button class="mark" type="button"><span>Mark</span></button>
+		<canvas width="500" height="80"></canvas>
+
+		<a class="open-settings" href="#">Settings</a>
+		<button class="mark" type="button"><span>Mark</span></button>
+	</div>
+
+	<div id="settings">
+		<input id="silent-sticks" type="checkbox" />
+		<label for="silent-sticks">Silent Sticks</label>
+
+		<input id="ui-brightness" type="radio" name="ui-brightness" value="light" checked="checked">
+		<label for="ui-brightness" checked="checked">Light</label>
+
+		<input id="ui-brightness" type="radio" name="ui-brightness" value="dark">
+		<label for="ui-brightness">Dark</label>
+	</div>
+
+	<div id="cards">
+		<div class="countdown">[ 3 ]</div>
+		<div class="countdown">[ 2 ]</div>
+		<div class="countdown">[ 1 ]</div>
+		<div class="time">time <span></span></div>
+		<div class="flash"></div>
+	</div>
+
+	<script src="/scripts/plugins.js"></script>
+	<script src="/scripts/main.js"></script>
+
+</body>
+</html>
