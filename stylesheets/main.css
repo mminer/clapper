@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'LeagueGothic';
-	src: url('/fonts/LeagueGothic.eot');
-	src: url('/fonts/LeagueGothic.eot?#iefix') format('embedded-opentype'),
-	     url('/fonts/LeagueGothic.woff') format('woff'),
-	     url('/fonts/LeagueGothic.ttf') format('truetype'),
-	     url('/fonts/LeagueGothic.svg') format('svg');
+	src: url('../fonts/LeagueGothic.eot');
+	src: url('../fonts/LeagueGothic.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/LeagueGothic.woff') format('woff'),
+	     url('../fonts/LeagueGothic.ttf') format('truetype'),
+	     url('../fonts/LeagueGothic.svg') format('svg');
 	font-style: normal;
 	font-weight: normal;
 }
@@ -180,7 +180,7 @@ h1 { display: none; }
 }
 
 #slate .take .controls button {
-	background-image: url('/images/icons.png');
+	background-image: url('../images/icons.png');
 	background-color: transparent;
 	background-repeat: no-repeat;
 	height: 48px;
@@ -199,7 +199,7 @@ h1 { display: none; }
 #toolbar .open-settings {
 	display: none;
 
-	background-image: url('/images/icons.png');
+	background-image: url('../images/icons.png');
 	background-repeat: no-repeat;
 	background-position: 0 -144px;
 	height: 48px;
@@ -224,7 +224,7 @@ h1 { display: none; }
 #toolbar .mark:last-child { right: 0; }
 
 #toolbar .mark span {
-	background-image: url('/images/icons.png');
+	background-image: url('../images/icons.png');
 	background-repeat: no-repeat;
 	background-position: 0 -192px;
 	display: block;
@@ -266,3 +266,4 @@ h1 { display: none; }
 #cards .time { font-size: 15em; }
 #cards .time span { font-size: 250%; }
 #cards .flash { background-color: rgb(0, 193, 0); }
+
