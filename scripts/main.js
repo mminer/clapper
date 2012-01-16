@@ -145,36 +145,6 @@ $(function() {
 			Cards.bind('done', this.mark, this);
 
 			this.audio = this.el.children('audio')[0];
-			this.context = this.el.children('canvas')[0].getContext('2d');
-			this.render();
-		},
-
-		render: function() {
-			if (Slate.model.get('brightness') === 'light') {
-				this.context.fillStyle = 'black';
-			} else {
-				this.context.fillStyle = 'white';
-			}
-
-			this.context.fillRect(0, 0, 1024, 80);
-			this.context.lineWidth = 49;
-			this.context.lineCap = 'square';
-
-			var colours = ['rgb(255, 255, 255)', 'rgb(193, 193, 193)', 'rgb(193, 193, 0)', 'rgb(0, 193, 193)', 'rgb(0, 193, 0)', 'rgb(193, 0, 193)', 'rgb(193, 0, 0)', 'rgb(0, 0, 193)', 'rgb(255, 255, 255)'];
-
-			for (var i = 0; i < colours.length; i++) {
-				this.context.strokeStyle = colours[i];
-				var x = (i * 138) - 60;
-
-				this.context.beginPath();
-				this.context.moveTo(x, 0);
-				this.context.lineTo(x + 40, 40);
-				this.context.moveTo(x + 40, 40);
-				this.context.lineTo(x, 80);
-				this.context.stroke();
-			}
-
-			return this;
 		},
 
 		mark: function() {
@@ -196,28 +166,6 @@ $(function() {
 			'click .open-settings': 'openSettings'
 		},
 
-		initialize: function() {
-			this.context = this.el.children('canvas')[0].getContext('2d');
-			this.render();
-		},
-
-		render: function() {
-			var gradient1 = this.context.createLinearGradient(0, 0, 500, 40);
-			var gradient2 = this.context.createLinearGradient(0, 40, 500, 80);
-
-			gradient1.addColorStop(0, 'black');
-			gradient1.addColorStop(1, 'white');
-			gradient2.addColorStop(0, 'white');
-			gradient2.addColorStop(1, 'black');
-
-			this.context.fillStyle = gradient1;
-			this.context.fillRect(0, 0, 500, 40);
-			this.context.fillStyle = gradient2;
-			this.context.fillRect(0, 40, 500, 40);
-
-			return this;
-		},
-
 		triggerClap: function() {
 			Cards.play();
 		},
@@ -230,5 +178,64 @@ $(function() {
 
 	var Toolbar = new ToolbarView;
 
+	// Creates a diagonal strip of SMTP colours at the top.
+	function renderSticks() {
+		var context = $('#sticks canvas')[0].getContext('2d');
 
+		if (Slate.model.get('brightness') === 'light') {
+			context.fillStyle = 'black';
+		} else {
+			context.fillStyle = 'white';
+		}
+
+		context.fillRect(0, 0, 1024, 80);
+		context.lineWidth = 49;
+		context.lineCap = 'square';
+
+		var colours = [
+			'rgb(255, 255, 255)',
+			'rgb(193, 193, 193)',
+			'rgb(193, 193, 0)',
+			'rgb(0, 193, 193)',
+			'rgb(0, 193, 0)',
+			'rgb(193, 0, 193)',
+			'rgb(193, 0, 0)',
+			'rgb(0, 0, 193)',
+			'rgb(255, 255, 255)'
+		];
+
+		for (var i = 0; i < colours.length; i++) {
+			context.strokeStyle = colours[i];
+			var x = (i * 138) - 60;
+
+			context.beginPath();
+			context.moveTo(x, 0);
+			context.lineTo(x + 40, 40);
+			context.moveTo(x + 40, 40);
+			context.lineTo(x, 80);
+			context.stroke();
+		}
+	}
+
+	// Creates grey gradient stripes at the bottom.
+	function renderGradients() {
+		var context = $('#toolbar canvas')[0].getContext('2d');
+
+		var gradient1 = context.createLinearGradient(0, 0, 500, 40);
+		var gradient2 = context.createLinearGradient(0, 40, 500, 80);
+
+		gradient1.addColorStop(0, 'black');
+		gradient1.addColorStop(1, 'white');
+		gradient2.addColorStop(0, 'white');
+		gradient2.addColorStop(1, 'black');
+
+		context.fillStyle = gradient1;
+		context.fillRect(0, 0, 500, 40);
+		context.fillStyle = gradient2;
+		context.fillRect(0, 40, 500, 40);
+	}
+
+	renderSticks();
+	renderGradients();
 });
+
