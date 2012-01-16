@@ -1,4 +1,12 @@
 $(function() {
+	// Gets the current date for displaying.
+	function getDate() {
+		var now = new Date();
+		var year = now.getFullYear().toString().substring(2);
+		var dateStr = now.getDate() + '/' + now.getMonth() + '/' + year;
+		return dateStr;
+	}
+
 	var SettingsModel = Backbone.Model.extend({
 		localStorage: new Store('slate'),
 		id: 'settings',
@@ -18,12 +26,6 @@ $(function() {
 				this.save();
 			});
 		},
-
-		date: function() {
-			var now = new Date();
-			var year = now.getFullYear().toString().substring(2);
-			return now.getDate() + '/' + now.getMonth() + '/' + year;
-		}
 	});
 
 	var Settings = new SettingsModel;
@@ -55,7 +57,7 @@ $(function() {
 				.find('.take p').text(this.model.get('take')).end()
 				.find('.director p').text(this.model.get('director')).end()
 				.find('.camera p').text(this.model.get('camera')).end()
-				.find('.date p').text(this.model.date());
+				.find('.date p').text(getDate());
 			$('body').addClass(this.model.get('brightness'));
 			return this;
 		},
@@ -158,25 +160,16 @@ $(function() {
 
 	var Sticks = new SticksView;
 
-	var ToolbarView = Backbone.View.extend({
-		el: $('#toolbar'),
-
-		events: {
-			'click .mark': 'triggerClap',
-			'click .open-settings': 'openSettings'
-		},
-
-		triggerClap: function() {
+	// Binds the mark and open settings buttons in the bottom toolbar.
+	$('#toolbar')
+		.find('.mark').click(function() {
 			Cards.play();
-		},
-
-		openSettings: function() {
+			return false;
+		}).end()
+		.find('.open-settings').click(function() {
 			console.log('open settings');
 			return false;
-		}
-	});
-
-	var Toolbar = new ToolbarView;
+		});
 
 	// Creates a diagonal strip of SMTP colours at the top.
 	function renderSticks() {
