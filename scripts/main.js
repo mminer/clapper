@@ -170,25 +170,5 @@ $(function() {
 			console.log('open settings');
 			return false;
 		});
-
-	// Creates grey gradient stripes at the bottom.
-	function renderGradients() {
-		var context = $('#toolbar canvas')[0].getContext('2d');
-
-		var gradient1 = context.createLinearGradient(0, 0, 500, 40);
-		var gradient2 = context.createLinearGradient(0, 40, 500, 80);
-
-		gradient1.addColorStop(0, 'black');
-		gradient1.addColorStop(1, 'white');
-		gradient2.addColorStop(0, 'white');
-		gradient2.addColorStop(1, 'black');
-
-		context.fillStyle = gradient1;
-		context.fillRect(0, 0, 500, 40);
-		context.fillStyle = gradient2;
-		context.fillRect(0, 40, 500, 40);
-	}
-
-	renderGradients();
 });
 

@@ -42,8 +42,6 @@
         </g>
     </svg>
 
-	</div>
-
 	<div id="slate">
 		<div class="production">
 			<h2>Production</h2>
@@ -95,7 +93,23 @@
 
 	<div id="toolbar">
 		<button class="mark" type="button"><span>Mark</span></button>
-		<canvas width="500" height="80"></canvas>
+
+        <svg id="gradient" width="500" height="80" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <linearGradient id="gradient-top">
+                    <stop class="stop-dark" offset="0%" />
+                    <stop class="stop-light" offset="100%" />
+                </linearGradient>
+
+                <linearGradient id="gradient-bottom">
+                    <stop class="stop-light" offset="0%" />
+                    <stop class="stop-dark" offset="100%" />
+                </linearGradient>
+            </defs>
+
+            <rect width="500" height="40" y="0" />
+            <rect width="500" height="40" y="40" />
+        </svg>
 
 		<a class="open-settings" href="#">Settings</a>
 		<button class="mark" type="button"><span>Mark</span></button>
