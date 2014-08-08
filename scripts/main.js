@@ -145,8 +145,7 @@ $(function() {
 
 		initialize: function() {
 			Cards.bind('done', this.mark, this);
-
-			this.audio = this.el.children('audio')[0];
+            this.audio = document.getElementById('smack-sound');
 		},
 
 		mark: function() {
@@ -171,4 +170,3 @@ $(function() {
 			return false;
 		});
 });
-
