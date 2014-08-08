@@ -2,21 +2,46 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="author" content="Matthew Miner (matthew@matthewminer.com)" />
 	<meta name="description" content="Slate board for filmmakers." />
 	<meta name="keywords" content="slate, clapperboard, clapboard, clapper, sticks, marker, film, filmmaking, video, clapsticks" />
 	<meta name="viewport" content="width=1024,height=748,user-scalable=no" />
+
+    <!-- Allow full-screen mode on iOS and Android. -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
 	<title>Tail Slate</title>
+
 	<link rel="stylesheet" href="stylesheets/main.css" />
 </head>
-<body>
+<body class="light">
 
 	<h1>Tail Slate</h1>
 
-	<div id="sticks">
-		<canvas width="1024" height="80"></canvas>
-		<audio src="audio/clap.mp3" preload="auto"></audio>
+    <audio src="audio/clap.mp3" preload="auto"></audio>
+
+    <svg id="sticks" width="1024" height="80" xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <polygon id="stripe" points="0,0 64,0 104,40 64,80 0,80, 40,40" />
+        </defs>
+
+        <rect class="bg" width="1024" height="768" />
+
+        <g class="stripes" transform="translate(-84, 0)">
+            <use xlink:href="#stripe" x="0" />
+            <use xlink:href="#stripe" x="128" />
+            <use xlink:href="#stripe" x="256" />
+            <use xlink:href="#stripe" x="384" />
+            <use xlink:href="#stripe" x="512" />
+            <use xlink:href="#stripe" x="640" />
+            <use xlink:href="#stripe" x="768" />
+            <use xlink:href="#stripe" x="896" />
+            <use xlink:href="#stripe" x="1024" />
+        </g>
+    </svg>
+
 	</div>
 
 	<div id="slate">

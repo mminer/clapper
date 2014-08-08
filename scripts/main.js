@@ -171,45 +171,6 @@ $(function() {
 			return false;
 		});
 
-	// Creates a diagonal strip of SMTP colours at the top.
-	function renderSticks() {
-		var context = $('#sticks canvas')[0].getContext('2d');
-
-		if (Slate.model.get('brightness') === 'light') {
-			context.fillStyle = 'black';
-		} else {
-			context.fillStyle = 'white';
-		}
-
-		context.fillRect(0, 0, 1024, 80);
-		context.lineWidth = 49;
-		context.lineCap = 'square';
-
-		var colours = [
-			'rgb(255, 255, 255)',
-			'rgb(193, 193, 193)',
-			'rgb(193, 193, 0)',
-			'rgb(0, 193, 193)',
-			'rgb(0, 193, 0)',
-			'rgb(193, 0, 193)',
-			'rgb(193, 0, 0)',
-			'rgb(0, 0, 193)',
-			'rgb(255, 255, 255)'
-		];
-
-		for (var i = 0; i < colours.length; i++) {
-			context.strokeStyle = colours[i];
-			var x = (i * 138) - 60;
-
-			context.beginPath();
-			context.moveTo(x, 0);
-			context.lineTo(x + 40, 40);
-			context.moveTo(x + 40, 40);
-			context.lineTo(x, 80);
-			context.stroke();
-		}
-	}
-
 	// Creates grey gradient stripes at the bottom.
 	function renderGradients() {
 		var context = $('#toolbar canvas')[0].getContext('2d');
@@ -228,7 +189,6 @@ $(function() {
 		context.fillRect(0, 40, 500, 40);
 	}
 
-	renderSticks();
 	renderGradients();
 });
 
