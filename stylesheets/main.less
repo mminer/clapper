@@ -1,0 +1,304 @@
+@font-face {
+	font-family: 'LeagueGothic';
+	src: url('../fonts/LeagueGothic.eot');
+	src: url('../fonts/LeagueGothic.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/LeagueGothic.woff') format('woff'),
+	     url('../fonts/LeagueGothic.ttf') format('truetype'),
+	     url('../fonts/LeagueGothic.svg') format('svg');
+	font-style: normal;
+	font-weight: normal;
+}
+
+/* Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	background: transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+}
+body {
+	/* font sizes specified in em corresponds to pixel size; 1.2em == 12px */
+	font-size: 62.5%;
+	line-height: 1;
+}
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-size: 100%;
+	font-weight: normal;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote {
+	quotes: none;
+}
+blockquote:before, blockquote:after {
+	content: '';
+	content: none;
+}
+del {
+	text-decoration: line-through;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a img { border: none; }
+
+
+/* General
+-------------------------------------------------------------- */
+
+html, body {
+	height: 748px;
+	position: relative;
+	width: 1024px;
+}
+
+html { margin: 0 auto; }
+body { font-family: 'LeagueGothic', 'Lucida Grande', Helvetica, Arial, sans-serif; }
+
+button {
+	border: 0;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+}
+
+h1 { display: none; }
+
+audio { display: none; }
+
+.light {
+    #slate {
+        background-color: white;
+        color: black;
+
+        h2 { background-color: white; }
+    }
+
+    #sticks .bg { fill: black; }
+}
+
+.dark {
+    #slate {
+        background-color: black;
+        color: white;
+
+        h2 { background-color: black; }
+    }
+
+    #sticks .bg { fill: white; }
+}
+
+#sticks {
+    /* Removes slight margin below SVG element. */
+    display: block;
+
+    use {
+        &:nth-of-type(1) { fill: rgb(255, 255, 255); }
+        &:nth-of-type(2) { fill: rgb(193, 193, 193); }
+        &:nth-of-type(3) { fill: rgb(193, 193, 0); }
+        &:nth-of-type(4) { fill: rgb(0, 193, 193); }
+        &:nth-of-type(5) { fill: rgb(0, 193, 0); }
+        &:nth-of-type(6) { fill: rgb(193, 0, 193); }
+        &:nth-of-type(7) { fill: rgb(193, 0, 0); }
+        &:nth-of-type(8) { fill: rgb(0, 0, 193); }
+        &:nth-of-type(9) { fill: rgb(255, 255, 255); }
+    }
+}
+
+#slate {
+    height: 533px; /* 588 - padding */
+    overflow: hidden;
+    padding: 55px 12px 0 12px;
+    position: relative;
+
+    h2 {
+        background-color: white;
+        color: #808080;
+        display: inline-block;
+        font-size: 4em;
+        left: 0;
+        margin-bottom: 0.5em;
+        padding-right: 0.3em;
+        position: absolute;
+        text-transform: uppercase;
+        top: -21px;
+    }
+
+    hr {
+        border-width: 0;
+        clear: left;
+        height: 0;
+    }
+
+    p {
+        font-size: 7em;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding: 40px 30px;
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    > div {
+        border-top: 4px solid #808080;
+        float: left;
+        position: relative;
+    }
+
+    .production { margin-right: 3%; width: 72%; }
+    .date { width: 25%; }
+
+    .roll { margin-right: 3%; width: 31%; }
+    .scene { margin-right: 3%; width: 32%; }
+    .take { width: 31%; }
+
+    .director { margin-right: 3%; width: 49%; }
+    .camera { width: 48%; }
+
+    .roll p,
+    .scene p,
+    .take p {
+        font-size: 15em;
+        text-align: center;
+    }
+
+    .take {
+        position: relative;
+
+        p { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+        .increment { background-position: 0 0; }
+        .decrement { background-position: 0 -48px; }
+        .reset { background-position: 0 -96px; }
+
+        .controls {
+            display: none;
+            height: 180px;
+            margin-top: -90px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 48px;
+
+            button {
+                background-image: url('../images/icons.png');
+                background-color: transparent;
+                background-repeat: no-repeat;
+                height: 48px;
+                margin: 6px 0;
+                text-indent: -9999px;
+                width: 48px;
+            }
+        }
+    }
+}
+
+#toolbar {
+	height: 80px;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+
+    #gradient {
+        .stop-dark { stop-color: black; }
+        .stop-light { stop-color: white; }
+
+        rect {
+            &:nth-of-type(1) { fill: url(#gradient-top); }
+            &:nth-of-type(2) { fill: url(#gradient-bottom); }
+        }
+    }
+
+    .open-settings {
+        display: none;
+
+        background-image: url('../images/icons.png');
+        background-repeat: no-repeat;
+        background-position: 0 -144px;
+        height: 48px;
+        left: 50%;
+        margin-left: -24px;
+        margin-top: -24px;
+        position: absolute;
+        text-indent: -9999px;
+        top: 50%;
+        width: 48px;
+    }
+
+    .mark {
+        background-color: rgb(43, 43, 43);
+        display: block;
+        padding: 16px 107px;
+        position: absolute;
+        top: 0;
+
+        &:first-child { left: 0; }
+        &:last-child { right: 0; }
+
+        span {
+            background-image: url('../images/icons.png');
+            background-repeat: no-repeat;
+            background-position: 0 -192px;
+            display: block;
+            height: 48px;
+            text-indent: -9999px;
+            width: 48px;
+        }
+    }
+}
+
+#settings {
+	background-color: rgba(0, 0, 0, 0.9);
+	display: none;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+#cards {
+	background-color: black;
+	color: white;
+	display: none;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	width: 100%;
+
+    > div {
+        display: none;
+        height: 100%;
+        line-height: 768px;
+        text-align: center;
+    }
+
+    .countdown { font-size: 60em; }
+    .flash { background-color: rgb(0, 193, 0); }
+
+    .time {
+        font-size: 15em;
+        span { font-size: 250%; }
+    }
+}
