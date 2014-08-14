@@ -31,6 +31,11 @@ h1 { display: none; }
 
 audio { display: none; }
 
+svg {
+    // Removes slight margin below element.
+    display: block;
+}
+
 .light {
     #slate {
         background-color: white;
@@ -53,21 +58,16 @@ audio { display: none; }
     #sticks .bg { fill: white; }
 }
 
-#sticks {
-    /* Removes slight margin below SVG element. */
-    display: block;
-
-    use {
-        &:nth-of-type(1) { fill: rgb(255, 255, 255); }
-        &:nth-of-type(2) { fill: rgb(193, 193, 193); }
-        &:nth-of-type(3) { fill: rgb(193, 193, 0); }
-        &:nth-of-type(4) { fill: rgb(0, 193, 193); }
-        &:nth-of-type(5) { fill: rgb(0, 193, 0); }
-        &:nth-of-type(6) { fill: rgb(193, 0, 193); }
-        &:nth-of-type(7) { fill: rgb(193, 0, 0); }
-        &:nth-of-type(8) { fill: rgb(0, 0, 193); }
-        &:nth-of-type(9) { fill: rgb(255, 255, 255); }
-    }
+#sticks use {
+    &:nth-of-type(1) { fill: rgb(255, 255, 255); }
+    &:nth-of-type(2) { fill: rgb(193, 193, 193); }
+    &:nth-of-type(3) { fill: rgb(193, 193, 0); }
+    &:nth-of-type(4) { fill: rgb(0, 193, 193); }
+    &:nth-of-type(5) { fill: rgb(0, 193, 0); }
+    &:nth-of-type(6) { fill: rgb(193, 0, 193); }
+    &:nth-of-type(7) { fill: rgb(193, 0, 0); }
+    &:nth-of-type(8) { fill: rgb(0, 0, 193); }
+    &:nth-of-type(9) { fill: rgb(255, 255, 255); }
 }
 
 #slate {
@@ -164,11 +164,6 @@ audio { display: none; }
 	position: relative;
 	text-align: center;
 
-    #gradient {
-        .stop-dark { stop-color: black; }
-        .stop-light { stop-color: white; }
-    }
-
     .open-settings {
         display: none;
 
@@ -184,28 +179,26 @@ audio { display: none; }
         top: 50%;
         width: 48px;
     }
+}
 
-    .mark {
-        background-color: rgb(43, 43, 43);
-        display: block;
-        padding: 16px 107px;
-        position: absolute;
-        top: 0;
+.mark {
+    rect {
+        fill: rgb(43, 43, 43);
+    }
 
-        &:first-child { left: 0; }
-        &:last-child { right: 0; }
+    circle {
+        fill: transparent;
+        stroke: white;
+        stroke-width: 3px;
 
-        span {
-            background-image: url('../images/icons.png');
-            background-repeat: no-repeat;
-            background-position: 0 -192px;
-            display: block;
-            height: 48px;
-            text-indent: -9999px;
-            width: 48px;
+        &:first-child {
+            fill: white;
         }
     }
 }
+
+.stop-dark { stop-color: black; }
+.stop-light { stop-color: white; }
 
 #settings {
 	background-color: rgba(0, 0, 0, 0.9);

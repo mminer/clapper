@@ -93,10 +93,19 @@
 	</div>
 
 	<div id="toolbar">
-		<button class="mark" type="button"><span>Mark</span></button>
-
-        <svg id="gradient" width="500" height="80" xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <svg id="gradient" width="1024" height="80" xmlns="http://www.w3.org/2000/svg" version="1.1">
             <defs>
+                <g id="mark" class="mark">
+                    <rect width="262" height="80" />
+
+                    <g transform="translate(131, 40)">
+                        <circle r="2" />
+                        <circle r="9" />
+                        <circle r="16" />
+                        <circle r="23" />
+                    </g>
+                </g>
+
                 <linearGradient id="gradient-top">
                     <stop class="stop-dark" offset="0%" />
                     <stop class="stop-light" offset="100%" />
@@ -108,13 +117,15 @@
                 </linearGradient>
             </defs>
 
-            <rect width="500" height="40" y="0" fill="url(#gradient-top)" />
-            <rect width="500" height="40" y="40" fill="url(#gradient-bottom)" />
+            <use xlink:href="#mark" transform="translate(0, 0)"/>
+            <rect width="500" height="40" x="262" y="0" fill="url(#gradient-top)" />
+            <rect width="500" height="40" x="262" y="40" fill="url(#gradient-bottom)" />
+            <use xlink:href="#mark" transform="translate(762, 0)"/>
         </svg>
 
 		<a class="open-settings" href="#">Settings</a>
-		<button class="mark" type="button"><span>Mark</span></button>
 	</div>
+
 
 	<div id="settings">
 		<input id="silent-sticks" type="checkbox" />
