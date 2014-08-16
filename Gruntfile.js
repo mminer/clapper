@@ -49,6 +49,7 @@ module.exports = function(grunt) {
                         'bower_components/underscore/underscore.js',
                         'bower_components/backbone/backbone.js',
                         'bower_components/backbone.localstorage/backbone.localStorage.js',
+                        'bower_components/fastclick/lib/fastclick.js',
                         'src/js/*.js'
                     ]
                 }
