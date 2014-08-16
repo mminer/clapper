@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         copy: {
             dist: {
                 cwd: 'src',
-                src: ['audio/*', 'font/*'],
+                src: ['audio/*', 'font/*', 'img/*'],
                 dest: 'dist',
                 expand: true
             }
