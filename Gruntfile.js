@@ -19,7 +19,6 @@ module.exports = function(grunt) {
                     collapseWhitespace: true,
                     // If this is false, SVG elements break.
                     keepClosingSlash: true
-
                 },
                 files: {
                     'dist/index.html': 'src/index.html'

@@ -30,7 +30,7 @@ var SettingsModel = Backbone.Model.extend({
 var Settings = new SettingsModel();
 
 var SlateView = Backbone.View.extend({
-    el: $('#slate'),
+    el: '#slate',
     model: Settings,
 
     events: {
@@ -49,7 +49,7 @@ var SlateView = Backbone.View.extend({
     },
 
     render: function() {
-        this.el
+        this.$el
             .find('.production p').text(this.model.get('production')).end()
             .find('.roll p').text(this.model.get('roll')).end()
             .find('.scene p').text(this.model.get('scene')).end()
@@ -101,20 +101,19 @@ var SlateView = Backbone.View.extend({
 var Slate = new SlateView();
 
 var CardsView = Backbone.View.extend({
-    el: $('#cards'),
+    el: '#cards',
     speed: 100,
 
     render: function() {
         var now = new Date();
         var time = now.getHours() + ':' + now.getMinutes();
-        this.el.find('.time span').text(time);
+        this.$el.find('.time span').text(time);
         return this;
     },
 
     play: function() {
-        this.render()
-            .el.show();
-        this.displayCard(this.el.children().first());
+        this.render().$el.show();
+        this.displayCard(this.$el.children().first());
     },
 
     displayCard: function(card) {
@@ -124,7 +123,7 @@ var CardsView = Backbone.View.extend({
         if (nextCard.length === 0) {
             // Exit once we've run out of cards
             this.trigger('done');
-            this.el.fadeOut();
+            this.$el.fadeOut();
         } else {
             var self = this;
 
@@ -139,7 +138,7 @@ var CardsView = Backbone.View.extend({
 var Cards = new CardsView();
 
 var SticksView = Backbone.View.extend({
-    el: $('#sticks'),
+    el: '#sticks',
     silent: false,
 
     initialize: function() {
