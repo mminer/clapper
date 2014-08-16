@@ -1,5 +1,5 @@
 {
-  "name": "tailslate",
+  "name": "clapper",
   "version": "0.1.0",
   "ignore": [
     "**/.*",
@@ -10,8 +10,8 @@
   ],
   "dependencies": {
     "backbone": "~1.1.2",
-    "underscore": "~1.6.0",
+    "backbone.localstorage": "~1.1.13",
     "jquery": "~2.1.1",
-    "backbone.localstorage": "~1.1.13"
+    "underscore": "~1.6.0"
   }
 }
