@@ -28,7 +28,7 @@ $(function() {
 		},
 	});
 
-	var Settings = new SettingsModel;
+	var Settings = new SettingsModel();
 
 	var SlateView = Backbone.View.extend({
 		el: $('#slate'),
@@ -99,7 +99,7 @@ $(function() {
 		}
 	});
 
-	var Slate = new SlateView;
+	var Slate = new SlateView();
 
 	var CardsView = Backbone.View.extend({
 		el: $('#cards'),
@@ -137,7 +137,7 @@ $(function() {
 		}
 	});
 
-	var Cards = new CardsView;
+	var Cards = new CardsView();
 
 	var SticksView = Backbone.View.extend({
 		el: $('#sticks'),
@@ -157,7 +157,7 @@ $(function() {
 		}
 	});
 
-	var Sticks = new SticksView;
+	var Sticks = new SticksView();
 
 	// Binds the mark and open settings buttons in the bottom toolbar.
 	$('#toolbar')
