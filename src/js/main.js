@@ -1,5 +1,3 @@
-FastClick.attach(document.body);
-
 // Gets the current date for displaying.
 function getDate() {
     var now = new Date();
