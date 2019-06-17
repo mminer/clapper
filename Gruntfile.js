@@ -26,10 +26,6 @@ module.exports = function(grunt) {
             }
         },
 
-        jshint: {
-            files: ['Gruntfile.js', 'src/js/*.js']
-        },
-
         less: {
             dist: {
                 options: {
@@ -74,11 +70,10 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['jshint', 'copy', 'htmlmin', 'less', 'uglify']);
+    grunt.registerTask('default', ['copy', 'htmlmin', 'less', 'uglify']);
 
 };
