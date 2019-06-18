@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta name="author" content="Matthew Miner (matthew@matthewminer.com)" />
-	<meta name="description" content="Slate board for filmmakers." />
-	<meta name="keywords" content="slate, clapperboard, clapboard, clapper, sticks, marker, film, filmmaking, video, clapsticks" />
-	<meta name="viewport" content="width=1024,height=748,user-scalable=no" />
+    <meta charset="utf-8" />
+    <meta name="author" content="Matthew Miner (matthew@matthewminer.com)" />
+    <meta name="description" content="Slate board for filmmakers." />
+    <meta name="keywords" content="slate, clapperboard, clapboard, clapper, sticks, marker, film, filmmaking, video, clapsticks" />
+    <meta name="viewport" content="width=1024,height=748,user-scalable=no" />
 
     <!-- Allow full-screen mode on iOS and Android. -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
 
-	<title>Clapper</title>
+    <title>Clapper</title>
 
     <link rel="stylesheet" href="css/main.min.css" />
 </head>
@@ -40,56 +40,56 @@
         </g>
     </svg>
 
-	<div id="slate">
-		<div class="production">
-			<h2>Production</h2>
-			<p contenteditable="true"></p>
-		</div>
+    <div id="slate">
+        <div class="production">
+            <h2>Production</h2>
+            <p contenteditable="true"></p>
+        </div>
 
-		<div class="date">
-			<h2>Date</h2>
-			<p></p>
-		</div>
+        <div class="date">
+            <h2>Date</h2>
+            <p></p>
+        </div>
 
-		<hr />
+        <hr />
 
-		<div class="roll">
-			<h2>Roll</h2>
-			<p contenteditable="true"></p>
-		</div>
+        <div class="roll">
+            <h2>Roll</h2>
+            <p contenteditable="true"></p>
+        </div>
 
-		<div class="scene">
-			<h2>Scene</h2>
-			<p contenteditable="true"></p>
-		</div>
+        <div class="scene">
+            <h2>Scene</h2>
+            <p contenteditable="true"></p>
+        </div>
 
-		<div class="take">
-			<h2>Take</h2>
-			<p></p>
+        <div class="take">
+            <h2>Take</h2>
+            <p></p>
 
-			<div class="controls">
-				<button type="button" class="increment">+</button>
-				<button type="button" class="decrement">-</button>
-				<button type="button" class="reset">Reset</button>
-			</div>
-		</div>
+            <div class="controls">
+                <button type="button" class="increment">+</button>
+                <button type="button" class="decrement">-</button>
+                <button type="button" class="reset">Reset</button>
+            </div>
+        </div>
 
-		<hr />
+        <hr />
 
-		<div class="director">
-			<h2>Director</h2>
-			<p contenteditable="true"></p>
-		</div>
+        <div class="director">
+            <h2>Director</h2>
+            <p contenteditable="true"></p>
+        </div>
 
-		<div class="camera">
-			<h2>Camera</h2>
-			<p contenteditable="true"></p>
-		</div>
+        <div class="camera">
+            <h2>Camera</h2>
+            <p contenteditable="true"></p>
+        </div>
 
-		<hr />
-	</div>
+        <hr />
+    </div>
 
-	<div id="toolbar">
+    <div id="toolbar">
         <svg id="gradient" width="1024" height="80" xmlns="http://www.w3.org/2000/svg" version="1.1">
             <defs>
                 <g id="mark" class="mark">
@@ -120,29 +120,29 @@
             <use xlink:href="#mark" transform="translate(762, 0)"/>
         </svg>
 
-		<a class="open-settings" href="#">Settings</a>
-	</div>
+            <a class="open-settings" href="#">Settings</a>
+    </div>
 
-	<div id="settings">
-		<input id="silent-sticks" type="checkbox" />
-		<label for="silent-sticks">Silent Sticks</label>
+    <div id="settings">
+        <input id="silent-sticks" type="checkbox" />
+        <label for="silent-sticks">Silent Sticks</label>
 
-		<input id="ui-brightness" type="radio" name="ui-brightness" value="light" checked="checked">
-		<label for="ui-brightness" checked="checked">Light</label>
+        <input id="ui-brightness" type="radio" name="ui-brightness" value="light" checked="checked">
+        <label for="ui-brightness" checked="checked">Light</label>
 
-		<input id="ui-brightness" type="radio" name="ui-brightness" value="dark">
-		<label for="ui-brightness">Dark</label>
-	</div>
+        <input id="ui-brightness" type="radio" name="ui-brightness" value="dark">
+        <label for="ui-brightness">Dark</label>
+    </div>
 
-	<div id="cards">
-		<div class="countdown">[ 3 ]</div>
-		<div class="countdown">[ 2 ]</div>
-		<div class="countdown">[ 1 ]</div>
-		<div class="time">time <span></span></div>
-		<div class="flash"></div>
-	</div>
+    <div id="cards">
+        <div class="countdown">[ 3 ]</div>
+        <div class="countdown">[ 2 ]</div>
+        <div class="countdown">[ 1 ]</div>
+        <div class="time">time <span></span></div>
+        <div class="flash"></div>
+    </div>
 
-	<script src="js/main.min.js"></script>
+    <script src="js/main.min.js"></script>
 
 </body>
 </html>
